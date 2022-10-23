@@ -1,5 +1,5 @@
 <div align="center">
-	<img src="./src/assets/tsxtlogo.png">
+	<img src="./src/assets/tsxlogo.png" alt="logo" />
 	<p align="center">
 	    <a href="https://v3.vuejs.org/" target="_blank">
 	        <img src="https://img.shields.io/badge/vue.js-vue3.x-green" alt="vue">
@@ -20,8 +20,18 @@
 	<p>&nbsp;</p>
 </div>
 
+- QQ交流群：475555266，有问题群里反馈，可及时解决
 # Vue3与TSX内测版
 WIP: Vue3(TSX) + Vite + TypeScript + Element-Plus + Pinia + Axios
+
+CSS方面会考虑换成Emotion,因为模板自带的样式隔离无法在TSX中使用所以只能使用css-in-js方案
+原子化的 css 方案 Unocss 也值得考虑
+
+### 部分截图
+<img src="./src/assets/images/login.png" alt="登录页面">
+<img src="./src/assets/images/defaults.png" alt="默认布局">
+<img src="./src/assets/images/layout.png" alt="横向布局">
+
 ### 修改入口文件
 因为默认项目模板是以`src/main.js`为入口的，我们需要把它修改为`src/main.ts`。  
 在`根目录的index.html`中修改入口文件的引用即可：
@@ -56,11 +66,12 @@ declare module '*.jpg';
 ### 集成vue-router
 ```bash
 yarn add --dev vue-router@4.0.4
+
 ```
 这里可以去`npm官网`查找最新版本  
 在src目录下，`新建router文件夹`，并在文件夹内`创建index.ts`
 `index.ts`:
-```js
+```javascript
 import { RouteRecordRaw, createRouter, createWebHistory } from 'vue-router';
 
 const routes: RouteRecordRaw[] = [
@@ -90,7 +101,7 @@ export default router;
 
 ### TSX
 最终我们的组件代码，都会是这样的：`App.tsx`:  
-```js
+```javascript
 import { defineComponent } from 'vue';
 import {RouterLink, RouterView} from 'vue-router';
 import './style/main.scss'
@@ -135,3 +146,5 @@ export default defineComponent({
 
 ## 结尾
 自我感觉TSX比模板好多了，并且html、组件标签的属性都带有类型推断，Vue3与TS的结合是大趋势
+
+ps：工作需要近期会去学习c++/qt 该项目暂时闲置(2022.10.13)
